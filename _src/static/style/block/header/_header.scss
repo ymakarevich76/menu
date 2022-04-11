@@ -1,2 +1,147 @@
 .header {
 }
+
+.header__inner {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1001;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1100px;
+  height: 60px;
+  margin: 0 auto;
+
+  background-color: #fff;
+  border: 1px solid #e3e3e3;
+}
+
+.header__nav {
+  overflow: hidden;
+
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.header__btn {
+  position: relative;
+
+  display: inline-block;
+  margin-left: auto;
+  padding-right: 30px !important;
+
+  font-weight: 400;
+  font-size: 18px;
+  color: $c-main;
+  text-decoration: none;
+  white-space: nowrap;
+
+  background: transparent;
+  background: url("../img/icon/arrow.svg") no-repeat;
+  background-position: right 13px top 10px;
+  background-size: 12px;
+  border: none;
+  outline: none;
+
+  &:hover {
+    color: $c-main;
+    text-decoration: none;
+  }
+
+  &.active {
+    color: $c-accent;
+  }
+
+  @media (max-width: $sm) {
+    font-size: 14px;
+
+    background-position: right 13px top 5px;
+  }
+}
+
+.header__nav-hidden,
+.header__lang-hidden {
+  position: absolute;
+  top: 50px;
+  z-index: 99999998;
+
+  min-width: 250px;
+  max-height: 500px;
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+
+  & a {
+    display: block;
+    padding: 8px 15px;
+  }
+
+  & .nav__list {
+    flex-direction: column;
+  }
+}
+
+.header__nav-hidden {
+  right: 18px;
+}
+
+.header__lang-hidden {
+  left: 18px;
+}
+
+.header__lang {
+  position: relative;
+
+  display: inline-block;
+  margin-right: 10px;
+  padding-left: 30px;
+
+  font-weight: 400;
+  font-size: 18px;
+  color: $c-main;
+  text-decoration: none;
+  white-space: nowrap;
+
+  background: transparent;
+  background: url("../img/icon/arrow.svg") no-repeat;
+  background-position: left 15px top 10px;
+  background-size: 12px;
+  border: none;
+  outline: none;
+
+  &:hover {
+    color: $c-main;
+    text-decoration: none;
+  }
+
+  &.active {
+    color: $c-accent;
+  }
+
+  @media (max-width: $sm) {
+    font-size: 14px;
+
+    background-position: left 15px top 5px;
+  }
+}
+
+.header__heart {
+  display: flex;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  margin-right: auto;
+
+  & svg {
+    width: 20px;
+    height: 20px;
+ 
+ }
+}

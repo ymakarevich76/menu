@@ -1,0 +1,86 @@
+.catalog {
+  padding-top: 60px;
+
+  font-weight: 300;
+  font-family: $ff-main;
+
+  background: #f9f9f9;
+  border: 1px solid #e3e3e3;
+  border-top: 1px solid transparent;
+}
+
+.catalog__header {
+  position: relative;
+
+  padding: 25px 20px 25px 30px;
+
+  font-weight: 600;
+  font-size: 20px;
+
+  cursor: pointer;
+
+  @media (max-width: 385px) {
+    padding-right: 40px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 20px;
+
+    display: block;
+    width: 18px;
+    height: 18px;
+
+    background: url("../img/icon/arrow.svg") no-repeat;
+    background-size: 18px;
+    transform: translate(0, -50%) rotate(0deg);
+  }
+
+  &.active::after {
+    transform: translate(0, -50%) rotate(180deg);
+  }
+
+  &.active + * {
+    height: auto;
+    // display: flex;
+
+    transform: translateY(0);
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.catalog__body {
+  // display: none;
+  display: flex;
+  flex-wrap: wrap;
+  height: 0;
+  padding: 0 8px;
+
+  transform: translateY(100%);
+  visibility: hidden;
+  opacity: 0;
+
+  transition: .3s;
+}
+
+.catalog__item {
+  flex: 0 0 calc(100% / 3);
+  max-width: calc(100% / 3);
+  padding: 10px;
+
+  cursor: pointer;
+
+  @media (max-width: $lg) {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+
+  @media (max-width: $xs) {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+

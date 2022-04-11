@@ -1,0 +1,167 @@
+.card__wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 12px;
+
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, .1);
+
+  @media (max-width: $sm) {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    padding-top: 170px;
+  }
+}
+
+.card__content {
+  display: flex;
+  align-items: center;
+
+  @media (max-width: $sm) {
+    // display: block;
+    flex-wrap: wrap;
+    order: 2;
+    margin-top: auto;
+  }
+}
+
+.card__name {
+  padding-right: 10px;
+
+  font-weight: 400;
+  font-size: 15px;
+
+  @media (max-width: $sm) {
+    width: calc(90% - 10px);
+  }
+}
+
+.card__totals {
+  display: flex;
+  flex: 0 0 100px;
+  align-items: center;
+  // margin-left: auto;
+
+  text-align: right;
+  white-space: nowrap;
+
+  @media (max-width: $sm) {
+    flex: 0 0 100%;
+    padding-top: 10px;
+  }
+}
+
+.card__price {
+  margin-left: auto;
+
+  font-weight: 700;
+  font-size: 17px;
+
+  @media (max-width: $sm) {
+    margin-left: 0;
+  }
+}
+
+.card__currency {
+  display: inline-block;
+  width: .4em;
+}
+
+.card__weight {
+  font-size: 15px;
+  color: #b2b2b2;
+
+  & span {
+    @media (max-width: $sm) {
+      display: none;
+    }
+  }
+
+  @media (max-width: $sm) {
+    margin-left: auto;
+  }
+}
+
+.card__descr {
+  margin-bottom: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+
+  font-size: 13px;
+  color: #b2b2b2;
+
+  @media (max-width: $sm) {
+    display: none;
+  }
+}
+
+.card__thumb {
+  margin-top: auto;
+  padding-top: 10px;
+
+  @media (max-width: $sm) {
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+
+    order: 1;
+    padding-top: 0;
+  }
+
+
+  & img {
+    width: 100%;
+    height: 230px;
+
+    border-radius: 6px;
+
+    object-fit: cover;
+    object-position: center center;
+
+    @media (max-width: $sm) {
+      // position: absolute;
+      // top: 0;
+      // right: 0;
+      // left: 0;
+      // order: 1;
+      width: 100%;
+      height: 160px;
+      padding-top: 0;
+
+      border-radius: 6px 6px 0 0;
+    }
+  }
+}
+
+.card__heart {
+  display: flex;
+  align-items: center;
+  min-width: 20px;
+  height: 20px;
+  margin-left: auto;
+
+  background: url("../img/icon/heart-regular.svg") no-repeat;
+  background-size: 20px;
+
+  &.active {
+    background: url("../img/icon/heart-solid.svg") no-repeat;
+
+    @media (max-width: $sm) {
+      background-position-x: right;
+    }
+  }
+
+  @media (max-width: $sm) {
+    width: 10%;
+
+    background-position-x: right;
+  }
+}
+
